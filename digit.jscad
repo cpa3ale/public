@@ -1,12 +1,26 @@
 function main () {
     var s=1, w=s/5;
+    var d = digitWithFrame(s,w);
+    var l1 = line([0,0],[0,s*16],w);
+    var l2 = line([0,0],[s*(10*4+2),0],w);
+  return union([
+      d,
+      d.translate([s*(10*1+0),0]),
+      d.translate([s*(10*2+2),0]),
+      d.translate([s*(10*3+2),0]),
+      l1,
+      l1.translate([s*(10*4+2),0]),
+      l2,
+      l2.translate([0,s*16]),
+     ]);
+}
+
+function digitWithFrame(s,w) {
+    var l1 = line([-s,-s],[-s,14*s],w);
+    var l2 = line([-s,-s],[8*s,-s],w);
   return union([
     digit(s,w),
-    line([-2*s,-2*s],[-2*s,16*s],w),
-    line([-2*s,-2*s],[10*s,-2*s],w),
-    line([10*s,-2*s],[10*s,16*s],w),
-    line([-2*s,16*s],[10*s,16*s],w),
-  ]);
+  ]).translate([s,s]);
 }
 
 function digit(s,w) {
