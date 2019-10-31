@@ -1,5 +1,5 @@
 function main () {
-    var s=1, w=s/5;
+    var s=1, w=s/10;
     var d = digitWithFrame(s,w);
     var l1 = line([0,0],[0,s*16],w);
     var l2 = line([0,0],[s*(10*4+2),0],w);
