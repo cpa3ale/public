@@ -1,5 +1,12 @@
 function main () {
-  return digit(1,0.2);
+    var s=1, w=s/5;
+  return union([
+    digit(s,w),
+    line([-2*s,-2*s],[-2*s,16*s],w),
+    line([-2*s,-2*s],[10*s,-2*s],w),
+    line([10*s,-2*s],[10*s,16*s],w),
+    line([-2*s,16*s],[10*s,16*s],w),
+  ]);
 }
 
 function digit(s,w) {
